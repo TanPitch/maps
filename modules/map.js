@@ -88,3 +88,12 @@ export const remove = (el) => {
 export const setView = (el) => {
     map.setView(el);
 };
+
+// right click to gg map QUICK-TEST: 
+map.addEventListener("contextmenu", (e) => {
+    const link = document.createElement("a");
+    link.href = `https://www.google.com/maps/search/?api=1&query=${e.latlng.lat}%2C${e.latlng.lng}`;
+    link.target="_blank"
+
+    link.click();
+})
